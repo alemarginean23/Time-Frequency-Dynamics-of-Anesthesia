@@ -4,9 +4,9 @@ This repository contains the complete computational pipeline for classifying iso
 
 ---
 
-## 🔬 Preprocessing & Feature Extraction Pipeline
+## Preprocessing & Feature Extraction Pipeline
 
-The raw LFP recordings are processed through a rigorous, leakage-free pipeline designed to extract time-frequency representations optimized for deep learning:
+The raw LFP recordings are processed through a pipeline designed to extract time-frequency representations optimized for deep learning:
 
 1. **Temporal Segmentation (Sliding Window):**
    * Extracts the first 120 seconds of spontaneous brain activity per recording.
@@ -32,13 +32,14 @@ The raw LFP recordings are processed through a rigorous, leakage-free pipeline d
 
 ---
 
-## 🏗️ Project Structure & Architecture
-- **Pipeline Script (`train_anesthesia_pipeline.py`)**: Handles automated sliding window generation, STFT feature extraction, Stratified 3-fold Cross-Validation, model training, and evaluation metrics (Confusion Matrix, F1-score).
+## Project Structure & Architecture
+- **`cnnAugumentare.ipynb`**: The primary computational pipeline notebook handling automated sliding window generation, STFT feature extraction, SpecAugment data augmentation, Stratified 3-fold Cross-Validation, model training, and evaluation metrics (Confusion Matrix, F1-score).
+- **`spec.ipynb`**: A companion notebook dedicated to visual inspection and generation of multichannel LFP spectrogram plots.
 - **CNN Architecture**: A custom 2D Convolutional Neural Network featuring L2 regularization, Batch Normalization, Dropout, and a designated target layer (`xai_target_conv`) tailored for post-hoc Grad-CAM interpretability visualizations.
 
 ---
 
-## 📦 Dependencies & Requirements
+## Dependencies & Requirements
 
 To run this project, ensure you have Python installed along with the following packages:
 
